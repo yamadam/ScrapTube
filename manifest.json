@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "ScrapTube",
+    "version": "0.1",
+    "description": "",
+
+    "content_scripts": [
+        {
+          "matches": ["https://www.youtube.com/*"],
+          "js": ["content.js"]
+        }
+      ],
+
+    "action": {
+        "default_popup": "popup.html"
+    },
+
+    "permissions": ["declarativeContent", "scripting", "tabs"],
+
+    "host_permissions": ["https://www.youtube.com/*"],
+    
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "web_accessible_resources": [
+        { "resources": ["inject.js"], "matches": ["https://www.youtube.com/*"] }
+    ],
+
+    "externally_connectable": {
+        "matches": ["https://www.youtube.com/*"]
+    }
+}
