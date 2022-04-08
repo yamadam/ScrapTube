@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="uft-8" />
+        <link rel="stylesheet" href="popup.css">    
     </head>
     <body>
-        <h1>Video Info</h1>
-        <ul>
+        <h1>ScrapTube</h1>
+
+        <div id="backButton" class="btn-seek">&#9664;</div>
+        <div id="forwardButton" class="btn-seek">&#9654;</div>
+
+        <ul hidden>
             <li id="url"></li>
             <li id="duration"></li>
             <li id="time"></li>
         </ul>
-        <button id="scrapButton">Scrap</button>
-        <script src="popup.js"></script>
+
+        <div class="label-input" >
+            <label for="phrase">Phrase</label>
+            <input type="text" id="captionText" name="phrase">
+        </div>
+        <div class="label-input">
+            <label for="tag">Tag</label>
+            <input type="text" id="captionTag" name="tag" placeholder="ex.)greetings,reply...">
+        </div>
+
+        <ul id="taglist"></ul>
+
+        <div class="right">
+            <div id="scrapButton" class="btn-flat-border">Scrap</div>
+        </div>
+
+        <hr size="2" noshade>
+
+        <div id="tagname" class="boxes"></div>
+
+        <div class="right">
+            <div id="sortButton" class="btn-flat-border">Filter</div>
+        </div>
+
+        <a id="download" href="#" class="download" download="test.csv">download</a>
+
+        <div id="output">
+            <table border cellpadding="7" id="targetTable" class="targetTable" width="500px">
+                <thead>
+                    <tr>
+                        <th class="phrase">Phrase</th>
+                        <th>Tag</th>
+                        <th>Link</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="scrapTable">
+
+                </tbody>
+            </table>
+        </div>
+
+        <script src="popup.js" charset="UTF-8"></script>
     </body>
 </html>

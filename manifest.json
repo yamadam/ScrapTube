@@ -15,7 +15,7 @@
         "default_popup": "popup.html"
     },
 
-    "permissions": ["declarativeContent", "scripting", "tabs"],
+    "permissions": ["declarativeContent", "scripting", "tabs", "storage"],
 
     "host_permissions": ["https://www.youtube.com/*"],
     

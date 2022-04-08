@@ -11,10 +11,9 @@ if(!script){
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if(!sender.tab){ // message was from popup.js
-        if(request.type == "info"){
-            window.postMessage({ from: "content.js" }, "*");
-            sendResponse({});    
-        }
+        console.log(request);
+        window.postMessage({ from: "content.js", type: request.type, sec: request.sec }, "*");
+        sendResponse({});
     }
 });
 
