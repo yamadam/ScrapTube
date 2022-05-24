@@ -79,7 +79,7 @@ function scrap(){
         return;
     }
 
-    scrapbook.push({ url: adjustUrlTime(url, -5), time, caption, captionTag });
+    scrapbook.push({ url: adjustUrlTime(url, -2), time, caption, captionTag });
 
     if(captionTag){
         tags.add(captionTag);
