@@ -57,12 +57,12 @@ window.addEventListener("blur", () => {
 
 document.getElementById("backButton").addEventListener("click", () => {
     console.log("back");
-    requestInfo(-4);
+    requestInfo(-2);
 });
 
 document.getElementById("forwardButton").addEventListener("click", () => {
     console.log("forward");
-    requestInfo(4);
+    requestInfo(2);
 });
 
 document.getElementById("scrapButton").addEventListener("click", scrap);
