@@ -57,12 +57,12 @@ window.addEventListener("blur", () => {
 
 document.getElementById("backButton").addEventListener("click", () => {
     console.log("back");
-    requestInfo(-2);
+    requestInfo(-4);
 });
 
 document.getElementById("forwardButton").addEventListener("click", () => {
     console.log("forward");
-    requestInfo(2);
+    requestInfo(4);
 });
 
 document.getElementById("scrapButton").addEventListener("click", scrap);
@@ -79,7 +79,7 @@ function scrap(){
         return;
     }
 
-    scrapbook.push({ url: adjustUrlTime(url, -2), time, caption, captionTag });
+    scrapbook.push({ url: adjustUrlTime(url, -5), time, caption, captionTag });
 
     if(captionTag){
         tags.add(captionTag);
