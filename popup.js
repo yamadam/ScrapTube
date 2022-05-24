@@ -57,12 +57,12 @@ window.addEventListener("blur", () => {
 
 document.getElementById("backButton").addEventListener("click", () => {
     console.log("back");
-    requestInfo(-5);
+    requestInfo(-2);
 });
 
 document.getElementById("forwardButton").addEventListener("click", () => {
     console.log("forward");
-    requestInfo(5);
+    requestInfo(2);
 });
 
 document.getElementById("scrapButton").addEventListener("click", scrap);
@@ -97,7 +97,7 @@ function adjustUrlTime(urlString, dt){
     return url.toString();
 }
 
-function filterScrap(){
+function filterScrap(){　//フィルター設定
     const options = document.getElementsByName('options');
     const selectedTags = Array.from(options).filter(o => o.checked).map(o => o.value);
 
@@ -219,10 +219,10 @@ function handleDownload() {
     const content = json2csv(a);
     const bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
     const blob = new Blob([ bom, content ], { "type" : "text/csv" });
-   
-    if (window.navigator.msSaveBlob) { 
-       window.navigator.msSaveBlob(blob, "test.csv"); 
-       window.navigator.msSaveOrOpenBlob(blob, "test.csv"); 
+
+    if (window.navigator.msSaveBlob) {
+       window.navigator.msSaveBlob(blob, "test.csv");
+       window.navigator.msSaveOrOpenBlob(blob, "test.csv");
     } else {
        document.getElementById("download").href = window.URL.createObjectURL(blob);
     }
